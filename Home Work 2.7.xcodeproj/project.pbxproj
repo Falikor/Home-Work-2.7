@@ -85,8 +85,8 @@
 			isa = PBXGroup;
 			children = (
 				6C83AE5B266F50B60071E962 /* PersonsListTableViewController.swift */,
-				6C83AE5F266F51D80071E962 /* SectionPersonListTableViewController.swift */,
 				6C83AE64266F599E0071E962 /* DetailPersonViewController.swift */,
+				6C83AE5F266F51D80071E962 /* SectionPersonListTableViewController.swift */,
 			);
 			path = "View Controlers";
 			sourceTree = "<group>";
@@ -339,8 +339,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Home Work 2.7/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				INFOPLIST_FILE = "$(SRCROOT)/Home Work 2.7/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -358,8 +358,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Home Work 2.7/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				INFOPLIST_FILE = "$(SRCROOT)/Home Work 2.7/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

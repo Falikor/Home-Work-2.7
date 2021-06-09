@@ -9,26 +9,60 @@ import UIKit
 
 class SectionPersonListTableViewController: UITableViewController {
 
+    
+    private let person = DataManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        tableView.rowHeight = 60
     }
-
-    // MARK: - Table view data source
-
+    
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
+        person.personGroup.count
+    }
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return person.personGroup[section].fulname
+    }
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = UIView(frame: CGRect(x: 50, y: view.frame.size.width - 10, width: view.frame.size.width, height: 60))
+        let image = UIImageView(image: UIImage(named: person.personGroup[section].name))
+        image.frame.size.height = 30
+        image.frame.size.width = 30
+        let label = UILabel(frame: CGRect(x: 70, y: 0, width: 300, height: header.frame.size.height - 10))
+        label.text = person.personGroup[section].fulname
+        label.font = UIFont(name:"HelveticaNeue-Bold", size: 17.0)
+        header.addSubview(image)
+        header.addSubview(label)
+        return header
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 2
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+
+        if indexPath.row % 2 == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CellSection", for: indexPath)
+            let people = person.personGroup[indexPath.row]
+            var content = cell.defaultContentConfiguration()
+            content.text = String(people.phone)
+            content.image = UIImage(named: "telephone")
+            cell.contentConfiguration = content
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CellSectionNext", for: indexPath)
+            let people = person.personGroup[indexPath.row]
+            var content = cell.defaultContentConfiguration()
+            content.text = people.email
+            content.image = UIImage(named: "email")
+            cell.contentConfiguration = content
+            return cell
+        }
     }
 
     /*

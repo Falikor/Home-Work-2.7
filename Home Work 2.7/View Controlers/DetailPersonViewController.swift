@@ -9,8 +9,18 @@ import UIKit
 
 class DetailPersonViewController: UIViewController {
 
+    @IBOutlet weak var imagePerson: UIImageView!
+    @IBOutlet weak var phonePerson: UILabel!
+    @IBOutlet weak var emailPerson: UILabel!
+    
+    var person: Person?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        imagePerson.image = UIImage(named: person?.name ?? "")
+        phonePerson.text = String(person?.phone ?? 0)
+        emailPerson.text = person?.email ?? ""
+        navigationItem.title = person?.fulname ?? ""
 
         // Do any additional setup after loading the view.
     }
